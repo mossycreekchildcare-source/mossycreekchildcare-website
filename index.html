@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mossy Creek Childcare - Play-Based Learning</title>
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 3px solid #4CAF50;
+        }
+        
+        .top-bar {
+            background: #f0f9ff;
+            padding: 10px 0;
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .logo-text h1 {
+            color: #2196F3;
+            font-size: 28px;
+            margin: 0;
+        }
+        
+        .logo-text p {
+            color: #FF6B9D;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #2196F3;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #e0f7fa 0%, #ffffff 100%);
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-text h2 {
+            color: #2196F3;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #FF6B9D;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #ff4081;
+        }
+        
+        .hero-image {
+            text-align: center;
+        }
+        
+        .hero-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .child-hands {
+            font-size: 80px;
+        }
+        
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin: 40px 0;
+        }
+        
+        .feature-box {
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-box:nth-child(1) { background: #FF6B9D; }
+        .feature-box:nth-child(2) { background: #FFA726; }
+        .feature-box:nth-child(3) { background: #2196F3; }
+        .feature-box:nth-child(4) { background: #8BC34A; }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-box p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Main Content Section */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .welcome-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .welcome-section h2 {
+            color: #2196F3;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-section h3 {
+            color: #FF6B9D;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-image {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            border-radius: 10px;
+            float: left;
+            margin: 0 20px 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background: #2196F3;
+        }
+        
+        .btn-secondary {
+            background: #00BCD4;
+        }
+        
+        /* News Section */
+        .news-section {
+            background: #FF6B9D;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .news-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .news-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .news-date {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, #b2dfdb, #e0f2f1);
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-banner p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #b2dfdb;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo h3 {
+            color: #2196F3;
+            margin-bottom: 10px;
+        }
+        
+        .footer-logo p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer-links h4 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 2;
+        }
+        
+        .footer-links a:hover {
+            color: #2196F3;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2196F3;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content, .content-grid, .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            📞 Call Now: +1 236-833-6619 | 📅 <a href="mailto:mossycreekchildcare@gmail.com?subject=Schedule%20a%20Tour" style="color: inherit; text-decoration: none;">Schedule a Tour</a>
+        </div>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Picture1.png" alt="Mossy Creek Childcare Logo" class="logo-img" style="width: 80px; height: 80px; object-fit: contain;">
+                    <div class="logo-text">
+                        <h1>Mossy Creek Childcare</h1>
+                        <p>PLAY-BASED LEARNING</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#parents">For Parents</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Play-Based Learning</h2>
+                    <p>Where children connect with nature through play-based learning. We offer multi-age childcare for ages 0 to 12 years, including Infant & Toddler programs (ages 0 to 36 months) in a nurturing, nature-rich environment.</p>
+                    <a href="#programs" class="btn">LEARN MORE</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-placeholder">
+                        <div class="child-hands">🌿 🌲 🦋</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="features" id="programs">
+        <div class="feature-box">
+            <div class="feature-icon">🌲</div>
+            <h3>Our Philosophy</h3>
+            <p>At Mossy Creek, we believe in play-based learning where children explore, discover, and grow through nature.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">👶</div>
+            <h3>Our Programs</h3>
+            <p>Multi-age childcare (0-12 years) and Infant & Toddler programs (ages 0 to 36 months). Full-day care with flexible schedules.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">🌿</div>
+            <h3>Play-Based</h3>
+            <p>Our play-based approach connects children with nature, fostering curiosity, creativity, and environmental awareness.</p>
+        </div>
+        <div class="feature-box">
+            <div class="feature-icon">📍</div>
+            <h3>Two Locations</h3>
+            <p>Chilliwack: 7:30 AM - 4:30 PM | Hope: 8:00 AM - 4:00 PM. Visit us to see our nature-rich learning spaces!</p>
+        </div>
+    </div>
+    
+    <section class="main-content" id="about">
+        <div class="container">
+            <div class="content-grid">
+                <div class="welcome-section">
+                    <h2>Where Nature Meets Nurture</h2>
+                    <div class="welcome-image">🌳</div>
+                    <h3>Welcome to Mossy Creek Childcare</h3>
+                    <p>We believe that play is the basic medium for learning.  Play is developmental and provides the child with experiences and chances to react to the world and to see how the world reacts to them.  It is our goal for the children to develop socially, physically, cognitively, and emotionally.  This will help your child to develop an understanding of themselves and compassion toward others.
+
+We value children’s individuality and respect their differences.  Every child deserves love, compassion, safety, and respect in their day-to-day surroundings. Our educators create an environment in which each child can grow and develop at their own rate.
+</p>
+                    <br>
+                    <p>Our experienced educators guide children ages 0 to 12 years through meaningful experiences that develop physical skills, creativity, and a deep connection to the natural world. We offer Infant & Toddler programs (ages 0 to 36 months) in safe, nurturing environments at our Hope location.</p>
+                    <p><strong>Chilliwack Location:</strong> 46017 Lewis Ave, Chilliwack BC V2P 3E2 (7:30 AM - 4:30 PM)<br>
+                    <strong>Hope Location:</strong> 881 Rupert Street, Hope BC V0X 1L0 (8:00 AM - 4:00 PM)</p>
+                    <div class="cta-buttons">
+                        <a href="#about" class="btn btn-primary">LEARN MORE</a>
+                        <a href="#contact" class="btn btn-secondary">CONTACT US</a>
+                    </div>
+                </div>
+                
+                <div class="news-section">
+                    <h3>Latest News</h3>
+                    <div class="news-item">
+                        <div class="news-date">📅 Jan 15, 2026</div>
+                        <strong>SPRING ENROLLMENT OPEN</strong>
+                        <p>Now accepting registrations for our Spring programs at both locations!</p>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">📅 Jan 10, 2026</div>
+                        <strong>EXPLORATION DAYS</strong>
+                        <p>Join us for special nature walks and learning activities this season!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="cta-banner" id="parents">
+        <div class="container">
+            <p>Questions about enrollment, our programs, or locations? Contact us or schedule a tour of our nature-rich learning spaces!</p>
+            <a href="mailto:mossycreekchildcare@gmail.com?subject=Inquiry" class="btn">INQUIRE NOW</a>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Picture1.png" alt="Mossy Creek Childcare Logo" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 10px;">
+                    <h3>Mossy Creek Childcare</h3>
+                    <p>PLAY-BASED LEARNING</p>
+                    <p style="margin-top: 15px;">Copyright © 2025 All rights reserved for Mossy Creek Childcare.</p>
+                    <div class="social-icons">
+                        <div class="social-icon">f</div>
+                        <div class="social-icon">t</div>
+                        <div class="social-icon">g</div>
+                        <div class="social-icon">in</div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Sitemap</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 15px;"><strong>Chilliwack Branch</strong><br>
+                    46017 Lewis Ave<br>
+                    Chilliwack BC V2P 3E2<br>
+                    Hours: 7:30 AM - 4:30 PM</p>
+                    <p style="font-size: 14px; color: #666;">
+                        <strong>Hope Branch</strong><br>
+                        881 Rupert Street<br>
+                        Hope BC V0X 1L0<br>
+                        Hours: 8:00 AM - 4:00 PM
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Programs</h4>
+                    <p style="font-size: 14px; color: #666;">🌱 Multi-age childcare (ages 0-12 years)<br><br>
+                    👶 Infant & Toddler programs (ages 0 to 36 months)<br><br>
+                    🌲 Play-based learning experiences</p>
+                </div>
+            </div>
+            <div class="copyright">
+                Designed with 🌿 for Mossy Creek Childcare
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
